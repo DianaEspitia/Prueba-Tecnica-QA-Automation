@@ -1,1 +1,1 @@
-# Prueba-Tecnica-QA-Automation
+# Prueba Técnica - QA Automation 🤖
