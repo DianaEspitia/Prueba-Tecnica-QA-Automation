@@ -20,7 +20,7 @@ else:
     exit()
 
 driver.maximize_window()
-driver.get('https://www.amazon.com/-/es/') #Abrir página de Amazon
+driver.get('https://www.amazon.com/') #Abrir página de Amazon
 
 #Búsqueda de artículo
 barra = driver.find_element_by_xpath('//*[@id="twotabsearchtextbox"]') 
@@ -40,11 +40,8 @@ except Exception as e:
     exit()
 
 #Elección de artículo    
-#elemento_consola = '//*[@id="search"]/div[1]/div[1]/div/span[3]/div[2]/div[2]/div/div/div/div/div/div/div/div[1]/div/div[2]/div/span/a/div/img'                                 
-elemento_consola = '/html/body/div[1]/div[2]/div[1]/div[1]/div/span[3]/div[2]/div[2]/div/div/div/div/div/div/div/div[1]/div/div[2]/div/span/a/div/img'
 try:
-    #wait.until(ec.visibility_of_element_located((By.XPATH, elemento_consola)))
-    articulo = driver.find_element(By.XPATH, elemento_consola)
+    articulo = driver.find_element(By.CLASS_NAME, 's-image')
     if articulo is not None:
         articulo.click()
 except Exception as e2:
@@ -56,23 +53,34 @@ except Exception as e2:
 #Esperar a que se encuentre el botón para agregar el carrito de compras
 try:
     boton_agregar_carrito = wait.until(ec.visibility_of_element_located((By.XPATH, '//*[@id="add-to-cart-button"]'))) 
+    agregar = driver.find_element(By.XPATH, '//*[@id="add-to-cart-button"]') #Agregar artículo al carrito de compras
+    if agregar is not None:
+        agregar.click()
 except Exception as e3:
     print("Fallas en la prueba. El botón para agregar el artículo al carrito de compras no se encontró, esto puede ser porque el producto seleccionado no se encuentra disponible.")
     print()
     print(str(e3))
     exit()
 
-#Agregar artículo al carrito de compras
-agregar = driver.find_element(By.XPATH, '//*[@id="add-to-cart-button"]') 
-if agregar is not None:
-    agregar.click()
-
 #Ver carrito
 carrito = driver.find_element(By.XPATH, '//*[@id="nav-cart"]')
 if carrito is not None:
     carrito.click()
 
+##Checkout
+try:
+    wait.until(ec.visibility_of_element_located((By.XPATH, '//*[@id="sc-buy-box-ptc-button"]/span/input'))) 
+    proceder_pago = driver.find_element(By.XPATH, '//*[@id="sc-buy-box-ptc-button"]/span/input')
+    if proceder_pago is not None:
+        proceder_pago.click()
+except Exception as e3:
+    print("Fallas en la prueba. El botón para proceder con el pago no se encontró, esto puede ser porque el producto seleccionado no se encuentra disponible.")
+    print()
+    print(str(e3))
+    exit()
+
 print("La prueba se ha completado con éxito")
 
 driver.close()
+
 
