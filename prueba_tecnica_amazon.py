@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
 
 # Seleccionar el navegador
-print('Seleccione el buscador que desea utilizar')
+print('Seleccione el navegador que desea utilizar')
 print('1. Google Chrome')
 print('2. Firefox')
 print()
