@@ -38,3 +38,6 @@
      * Cógido postal.
      * Teléfono.
    * Seleccionar método de pago y dar click en continuar para ver el resumen.
+
+
+<p align="center"><img src="https://github.com/DianaEspitia/Prueba-Tecnica-QA-Automation/blob/main/Funcionamiento.gif"></p>
