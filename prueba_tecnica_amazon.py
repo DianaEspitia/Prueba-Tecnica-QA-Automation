@@ -42,7 +42,8 @@ except Exception as e:
 
 #Elección de artículo    
 try:
-    driver.find_element(By.CLASS_NAME, 's-image').click()
+    images = driver.find_elements(By.CLASS_NAME, 's-image')
+    images[1].click()
 except Exception as e2:
     print("Fallas en la prueba, el articulo indicado no fue encontrado.")
     print()
