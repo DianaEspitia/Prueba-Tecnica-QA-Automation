@@ -5,7 +5,7 @@
 <br />
 
 ## Prueba de Amazon en Chrome y Firefox
-1. ```Objetivo```: Verificar las funciones de búsqueda, selección de artículos, visualización del carrito de compras y chekout en el sitio web de Amazon.
+1. ```Objetivo```: Verificar las funciones de búsqueda, selección de artículos, visualización del carrito de compras y checkout en el sitio web de Amazon.
 
 2. ```Pre-requisitos```: Tener instalados los navegadores Google Chrome y Firefox.
   
