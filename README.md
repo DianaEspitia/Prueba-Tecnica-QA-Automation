@@ -16,10 +16,10 @@
    * Identificar la barra de búsqueda.
    * Escribir el artículo que se desea buscar (Ejemplo: ```consola de videojuegos```).
    * Identificar el botón de búsqueda.
-   * Hcaer click en el botón.
+   * Hacer click en el botón.
    * Identificar el artículo que desea agregar.
    * Seleccionar el artículo que desea agregar.
-   * Identificar el botón que permite agrega el artículo al carrito de compras.
+   * Identificar el botón que permite agregar el artículo al carrito de compras.
    * Dar click en el botón para agregar el artículo al carrito de compras.
    * Identificar el elemento carrito de compras.
    * Dar click en el carrito de compras para visualizar el artículo agregado.
